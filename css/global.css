@@ -1,5 +1,6 @@
 *{
     font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
 }
 
 
@@ -21,10 +22,17 @@
 }
 
 .list_pokemon li{
+  display: flex;
+  flex-direction: column;
   margin: .5rem;
   padding: 2rem 1rem;
+  border-radius: 1rem;
   background-color: #14A06F;
   color: #fff;
-  border-radius: 1rem;
+}
+
+.list_pokemon li img{
+  max-width: 100%;
   height: 100px;
+
 }
