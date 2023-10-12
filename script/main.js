@@ -22,19 +22,12 @@ function convertPokemonHtml(pokemon){
 
 const pokemonList = document.getElementById('pokemonList');
 
-fetch(url)
-    .then((response)=>response.json())
-    .then((jsonBody) => jsonBody.results)
-    .then((pokemons) =>{
-        
-        for(let i = 0; i < pokemons.length;i++){
+PokeApi.getPokemons().then((pokemons) =>{
+    const listItens = [];    
+    for(let i = 0; i < pokemons.length;i++){
             const pokemon = pokemons[i];
-            pokemonList.innerHTML += convertPokemonHtml(pokemon);
-           // document.getElementsByClassName('pokemons')
-        }
-        /*
-        debugger
-        console.log(pokemonList)
-        */
-    })
-    .catch((error)=>console.log(error))
+            listItens.push(convertPokemonHtml(pokemon))
+    }
+    console.log(listItens);
+})
+    
